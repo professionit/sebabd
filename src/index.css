@@ -1,95 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --background: 210 20% 98%;
+    --foreground: 220 30% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 220 30% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
+    --popover-foreground: 220 30% 12%;
+    --primary: 163 100% 21%;
+    --primary-foreground: 0 0% 100%;
+    --primary-dark: 163 100% 15%;
     --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
+    --secondary-foreground: 220 30% 12%;
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
+    --muted-foreground: 215 16% 47%;
     --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
+    --accent-foreground: 220 30% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 163 100% 21%;
     --radius: 0.5rem;
 
+    /* Custom Seba tokens */
+    --seba-green: 163 100% 21%;
+    --seba-green-dark: 163 100% 15%;
+    --seba-green-light: 155 55% 94%;
+    --seba-green-mid: 155 45% 83%;
+    --seba-red: 353 90% 56%;
+    --seba-red-light: 0 100% 97%;
+    --seba-gold: 42 50% 54%;
+    --seba-gold-light: 45 75% 94%;
+    --seba-text: 220 30% 12%;
+    --seba-text-2: 215 14% 34%;
+    --seba-text-3: 215 11% 51%;
+
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
@@ -98,8 +56,900 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
+    font-family: 'Hind Siliguri', sans-serif;
   }
 }
+
+/* ===== TOP BAR ===== */
+.topbar {
+  background: hsl(var(--seba-green-dark));
+  color: #fff;
+  font-size: 12.5px;
+  padding: 6px 0;
+}
+.topbar-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.topbar a {
+  color: #b2d9ce;
+  text-decoration: none;
+  margin-left: 16px;
+  font-size: 12px;
+}
+.topbar a:hover { color: #fff; }
+
+/* ===== HEADER ===== */
+.seba-header {
+  background: hsl(var(--seba-green));
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+}
+.header-main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex: 1;
+}
+.logo-icon {
+  width: 52px;
+  height: 52px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  flex-shrink: 0;
+}
+.logo-text h1 {
+  font-family: 'Noto Serif Bengali', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  line-height: 1.2;
+}
+.logo-text p {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 1px;
+}
+.header-search { flex: 0 0 380px; }
+.header-search form {
+  display: flex;
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+.header-search form:focus-within {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.6);
+}
+.header-search input {
+  flex: 1;
+  background: none;
+  border: none;
+  color: #fff;
+  padding: 9px 14px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 14px;
+  outline: none;
+}
+.header-search input::placeholder { color: rgba(255,255,255,0.65); }
+.header-search button {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+.header-search button:hover { background: rgba(255,255,255,0.35); }
+
+/* Ministry dropdown in header */
+.ministry-dropdown {
+  position: relative;
+}
+.ministry-dropdown-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  color: #fff;
+  padding: 9px 14px;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.ministry-dropdown-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+.ministry-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  min-width: 280px;
+  max-height: 360px;
+  overflow-y: auto;
+  z-index: 200;
+  border: 1px solid hsl(var(--border));
+}
+.ministry-dropdown-menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 16px;
+  border: none;
+  background: none;
+  font-family: 'Hind Siliguri', sans-serif;
+  font-size: 13.5px;
+  color: hsl(var(--seba-text));
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+.ministry-dropdown-menu button:hover {
+  background: hsl(var(--seba-green-light));
+}
+.ministry-dropdown-menu button.active {
+  background: hsl(var(--seba-green));
+  color: #fff;
+  font-weight: 600;
+}
+.ministry-dropdown-menu .ministry-count {
+  margin-left: auto;
+  font-size: 11px;
+  opacity: 0.6;
+  background: hsl(var(--seba-green-light));
+  padding: 2px 7px;
+  border-radius: 10px;
+  color: hsl(var(--seba-green));
+}
+.ministry-dropdown-menu button.active .ministry-count {
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+/* ===== NAV TABS ===== */
+.nav-tabs {
+  background: hsl(var(--seba-green-dark));
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+}
+.nav-tab {
+  padding: 11px 18px;
+  color: rgba(255,255,255,0.78);
+  font-size: 13.5px;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  white-space: nowrap;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: none;
+  font-family: 'Hind Siliguri', sans-serif;
+}
+.nav-tab:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.07);
+}
+.nav-tab.active {
+  color: #fff;
+  border-bottom-color: hsl(var(--seba-gold));
+  font-weight: 600;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: linear-gradient(135deg, hsl(var(--seba-green)) 0%, hsl(var(--seba-green-dark)) 100%);
+  padding: 44px 20px 54px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 350px;
+  height: 350px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 50%;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  right: 60px;
+  bottom: -100px;
+  width: 200px;
+  height: 200px;
+  background: hsla(var(--seba-gold), 0.1);
+  border-radius: 50%;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+}
+.hero h2 {
+  font-family: 'Noto Serif Bengali', serif;
+  font-size: 30px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero p {
+  color: rgba(255,255,255,0.8);
+  font-size: 15.5px;
+  max-width: 560px;
+  line-height: 1.6;
+}
+.hero-stats {
+  display: flex;
+  gap: 28px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+.stat-box {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  padding: 14px 22px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+.stat-box .num {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Noto Serif Bengali', serif;
+}
+.stat-box .lbl {
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  margin-top: 2px;
+}
+
+/* ===== QUICK ACCESS ===== */
+.quick-access {
+  background: #fff;
+  border-bottom: 1px solid hsl(var(--border));
+  padding: 18px 0;
+}
+.quick-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+.quick-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: hsl(var(--seba-text-3));
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+.quick-grid {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.quick-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: hsl(var(--seba-green-light));
+  border: 1px solid hsl(var(--seba-green-mid));
+  border-radius: 24px;
+  padding: 7px 14px;
+  font-size: 13px;
+  color: hsl(var(--seba-green));
+  cursor: pointer;
+  transition: all 0.18s;
+  font-weight: 500;
+}
+.quick-chip:hover {
+  background: hsl(var(--seba-green));
+  color: #fff;
+  border-color: hsl(var(--seba-green));
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px hsla(var(--seba-green), 0.2);
+}
+
+/* ===== MAIN CONTENT ===== */
+.seba-main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px 60px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.section-title {
+  font-family: 'Noto Serif Bengali', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: hsl(var(--seba-text));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 22px;
+  background: hsl(var(--seba-green));
+  border-radius: 2px;
+}
+
+/* ===== CATEGORY FILTER ===== */
+.cat-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.cat-btn {
+  padding: 7px 16px;
+  border-radius: 20px;
+  border: 1.5px solid hsl(var(--border));
+  background: #fff;
+  font-size: 13px;
+  color: hsl(var(--seba-text-2));
+  cursor: pointer;
+  font-family: 'Hind Siliguri', sans-serif;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cat-btn:hover {
+  border-color: hsl(var(--seba-green));
+  color: hsl(var(--seba-green));
+}
+.cat-btn.active {
+  background: hsl(var(--seba-green));
+  color: #fff;
+  border-color: hsl(var(--seba-green));
+  font-weight: 600;
+}
+
+/* ===== SERVICE GRID ===== */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 18px;
+}
+.service-card {
+  background: #fff;
+  border: 1px solid hsl(var(--border));
+  border-radius: 14px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.22s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08), 0 4px 24px hsla(var(--seba-green), 0.07);
+  position: relative;
+}
+.service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px hsla(var(--seba-green), 0.14);
+  border-color: hsl(var(--seba-green-mid));
+}
+.card-top {
+  padding: 18px 18px 14px;
+  border-bottom: 1px solid hsl(var(--border));
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+}
+.card-info h3 {
+  font-size: 15.5px;
+  font-weight: 600;
+  color: hsl(var(--seba-text));
+  line-height: 1.3;
+  margin-bottom: 4px;
+}
+.card-info .ministry {
+  font-size: 12px;
+  color: hsl(var(--seba-green));
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.card-body { padding: 14px 18px; }
+.meta-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.meta-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.badge-time { background: #eff6ff; color: #2563eb; }
+.badge-cost { background: #fef3c7; color: #92400e; }
+.badge-free { background: #dcfce7; color: #15803d; }
+.card-footer {
+  padding: 10px 18px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.status-pill {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+}
+.pill-online { background: #dcfce7; color: #15803d; }
+.pill-offline { background: #fef3c7; color: #92400e; }
+.pill-both { background: #eff6ff; color: #2563eb; }
+.details-btn {
+  font-size: 12.5px;
+  color: hsl(var(--seba-green));
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.free-ribbon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: hsl(var(--seba-green));
+  color: #fff;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* Ministry badge on card */
+.ministry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: hsl(var(--seba-green-light));
+  color: hsl(var(--seba-green));
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+/* ===== MINISTRY BROWSER ===== */
+.ministry-browser {
+  max-width: 1200px;
+  margin: auto;
+  padding: 30px 20px 10px;
+}
+.ministry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+.ministry-card {
+  background: #fff;
+  border: 1.5px solid hsl(var(--border));
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.ministry-card:hover {
+  border-color: hsl(var(--seba-green));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px hsla(var(--seba-green), 0.12);
+}
+.ministry-card.active {
+  background: hsl(var(--seba-green));
+  border-color: hsl(var(--seba-green));
+  color: #fff;
+}
+.ministry-card .m-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+.ministry-card .m-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+.ministry-card .m-info .m-count {
+  font-size: 12px;
+  opacity: 0.7;
+  margin-top: 2px;
+}
+.ministry-card.active .m-info .m-count {
+  opacity: 0.85;
+}
+
+/* Active filter indicator */
+.active-filters {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: hsl(var(--seba-green-light));
+  border: 1px solid hsl(var(--seba-green-mid));
+  color: hsl(var(--seba-green));
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 16px;
+}
+.filter-tag button {
+  background: none;
+  border: none;
+  color: hsl(var(--seba-green));
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0;
+  margin-left: 2px;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+  backdrop-filter: blur(3px);
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.modal {
+  background: #fff;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.25s;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+}
+.modal-overlay.open .modal {
+  transform: translateY(0);
+}
+.modal-header-section {
+  background: linear-gradient(135deg, hsl(var(--seba-green)), hsl(var(--seba-green-dark)));
+  padding: 24px 24px 20px;
+  border-radius: 18px 18px 0 0;
+  position: relative;
+}
+.modal-header-section h2 {
+  font-family: 'Noto Serif Bengali', serif;
+  font-size: 20px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.modal-header-section .m-ministry {
+  font-size: 13px;
+  color: rgba(255,255,255,0.8);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.modal-close {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.modal-close:hover { background: rgba(255,255,255,0.35); }
+.modal-body { padding: 24px; }
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.info-box {
+  border: 1.5px solid hsl(var(--border));
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+}
+.info-box .ib-val {
+  font-size: 20px;
+  font-weight: 700;
+  color: hsl(var(--seba-green));
+  font-family: 'Noto Serif Bengali', serif;
+}
+.info-box .ib-lbl {
+  font-size: 11.5px;
+  color: hsl(var(--seba-text-3));
+  margin-top: 3px;
+}
+.section-block { margin-bottom: 20px; }
+.section-block h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: hsl(var(--seba-text));
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid hsl(var(--border));
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.doc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 0;
+}
+.doc-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: hsl(var(--seba-text-2));
+  line-height: 1.5;
+}
+.doc-list li::before {
+  content: '✓';
+  color: hsl(var(--seba-green));
+  font-weight: 700;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+.step-list {
+  list-style: none;
+  counter-reset: steps;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+.step-list li {
+  display: flex;
+  gap: 10px;
+  font-size: 13.5px;
+  color: hsl(var(--seba-text-2));
+  line-height: 1.5;
+  counter-increment: steps;
+}
+.step-list li::before {
+  content: counter(steps);
+  background: hsl(var(--seba-green));
+  color: #fff;
+  min-width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border));
+}
+.fee-table th {
+  background: hsl(var(--seba-green-light));
+  color: hsl(var(--seba-green-dark));
+  font-weight: 600;
+  padding: 10px 14px;
+  text-align: left;
+}
+.fee-table td {
+  padding: 10px 14px;
+  border-top: 1px solid hsl(var(--border));
+  color: hsl(var(--seba-text-2));
+}
+.fee-table tr:hover td { background: hsl(var(--seba-green-light)); }
+.note-box {
+  background: hsl(var(--seba-gold-light));
+  border: 1px solid #e8d9b0;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 13px;
+  color: #7a5c1e;
+  margin-top: 18px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.apply-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  background: hsl(var(--seba-green));
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'Hind Siliguri', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: center;
+  text-decoration: none;
+}
+.apply-btn:hover { background: hsl(var(--seba-green-dark)); }
+
+/* ===== FOOTER ===== */
+.seba-footer {
+  background: hsl(var(--seba-green-dark));
+  color: rgba(255,255,255,0.75);
+  padding: 36px 20px 20px;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 28px;
+}
+.footer-brand h3 {
+  font-family: 'Noto Serif Bengali', serif;
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.footer-brand p { font-size: 13px; line-height: 1.7; }
+.footer-col h4 {
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+.footer-col ul { list-style: none; padding: 0; }
+.footer-col ul li {
+  margin-bottom: 7px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.footer-col ul li:hover { color: #fff; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12.5px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.footer-bottom a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  margin-left: 14px;
+}
+.footer-bottom a:hover { color: #fff; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .logo-text h1 { font-size: 16px; }
+  .header-search { flex: none; width: 100%; }
+  .header-main { flex-wrap: wrap; }
+  .hero h2 { font-size: 22px; }
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .service-grid { grid-template-columns: 1fr; }
+  .hero-stats { gap: 14px; }
+  .ministry-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .ministry-grid { grid-template-columns: 1fr; }
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 60px 20px;
+  color: hsl(var(--seba-text-3));
+}
+.no-results .nr-icon { font-size: 48px; margin-bottom: 12px; }
+.no-results h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: hsl(var(--seba-text));
+  margin-bottom: 6px;
+}
+.no-results p { font-size: 14px; }
